@@ -2,6 +2,9 @@
 
 Web App to test Sign In with Google (Google Identity) <https://developers.google.com/identity/gsi/web/guides/overview>
 
+## Supported Browsers
+Check here: <https://developers.google.com/identity/gsi/web/guides/supported-browsers>
+
 ## Available Scripts
 
 In the project directory, you can run:
