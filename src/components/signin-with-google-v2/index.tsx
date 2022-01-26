@@ -32,6 +32,7 @@ const SignInWithGoogleV2 = () => {
                     data-ux_mode="popup"
                     data-callback="signInCallBack"
                     data-nonce=""
+                    data-skip_prompt_cookie={process.env.REACT_APP_COOKIE_ID}
                     data-auto_select="true">
                 </div>
 
