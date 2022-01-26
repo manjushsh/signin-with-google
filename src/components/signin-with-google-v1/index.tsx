@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import initFirebase from "../../firebase";
 
-const initAuth = () => {
+const initAuth = (updateUserDetails: Function) => {
+
+    // Reference
+    // https://firebase.google.com/docs/auth/web/google-signin
+
     initFirebase()
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -13,7 +17,9 @@ const initAuth = () => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential?.accessToken;
             // The signed-in user info.
-            const user = result.user;
+            const { user } = result;
+            updateUserDetails(user);
+
         }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
@@ -26,11 +32,14 @@ const initAuth = () => {
         });
 }
 
+const signInCallBack = () => { };
+
 const SignInWithGoogle = () => {
+    const [userDetails, updateUserDetails] = useState<any>({});
     return (
         <React.Fragment>
-            <div className='signin-container' onClick={initAuth }>
-                Sign In
+            <div className='signin-container' onClick={() => initAuth(updateUserDetails)}>
+                {userDetails && userDetails.displayName ? `Welcome to spinner ${userDetails?.displayName}!` : 'Sign In'}
             </div>
         </React.Fragment>
     );
