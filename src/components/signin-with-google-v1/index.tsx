@@ -36,6 +36,15 @@ const signInCallBack = () => { };
 
 const SignInWithGoogle = () => {
     const [userDetails, updateUserDetails] = useState<any>({});
+    const logoNode = document.getElementById("spinnable-logo");
+    if (logoNode) {
+        if (userDetails && userDetails.displayName && !logoNode.classList.contains('spinnable-logo')) {
+            logoNode.classList.add("App-logo-spin");
+        }
+        else if (!(userDetails && userDetails.displayName)) {
+            logoNode.classList.remove("App-logo-spin");
+        }
+    }
     return (
         <React.Fragment>
             <div className='signin-container' onClick={() => initAuth(updateUserDetails)}>
