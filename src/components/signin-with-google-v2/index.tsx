@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 declare global {
     interface Window {
         google: any;
@@ -22,7 +22,7 @@ const SignInWithGoogleV2 = () => {
         window?.google?.accounts?.id.prompt()
     }, []);
 
-    const [userDetails, updateUserDetails] = useState<any>({});
+    // const [userDetails, updateUserDetails] = useState<any>({});
     return (
         <React.Fragment>
             <div className='signin-container'>
