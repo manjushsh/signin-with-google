@@ -41,20 +41,20 @@
     -->
 
   <!-- This Works 100% time but how to pass data? -->
-  <!-- <script>
+  <script>
     window.handleCredentialResponse = (data) => {
       console.warn("Hello!", data);
-      alert("Callback Invoked!");
     }
 
-    window.onload = function () {
+    window.onload = () => {
+      // https://stackoverflow.com/questions/14563155/oauth-2-0-client-id-and-client-secret-exposed-is-it-a-security-issue
       google.accounts.id.initialize({
-        client_id: 'YOUR_CLIENT_ID',
+        client_id: '72622534160-ifku0o6toknndafb6k3q8hust9haq1u7.apps.googleusercontent.com',
         callback: window.handleCredentialResponse
       });
       google.accounts.id.prompt();
     };
-  </script> -->
+  </script>
 
 </body>
 
