@@ -7,7 +7,6 @@ declare global {
 
 const signInCallBack = (data: any) => {
     console.warn("Hello!", data);
-
     alert("Callback Invoked!");
 };
 
