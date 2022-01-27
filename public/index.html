@@ -43,7 +43,15 @@
   <!-- This Works 100% time but how to pass data? -->
   <script>
     window.handleCredentialResponse = (data) => {
-      console.warn("Hello!", data);
+      const logoNode = document.getElementById("spinnable-logo");
+      if (logoNode) {
+        if (data && data.clientId && data.credential && !logoNode.classList.contains('spinnable-logo')) {
+          logoNode.classList.add("App-logo-spin");
+        }
+        else if (!(data && data.clientId && data.credential)) {
+          logoNode.classList.remove("App-logo-spin");
+        }
+      }
     }
 
     window.onload = () => {
