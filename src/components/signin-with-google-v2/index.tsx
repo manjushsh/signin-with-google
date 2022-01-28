@@ -10,7 +10,7 @@ const SignInWithGoogleV2 = () => {
 
     return (
         <React.Fragment>
-            <div className='signin-container'>
+            <div id='signin-container' className='signin-container'>
                 <div id="g_id_onload"
                     data-client_id="72622534160-ifku0o6toknndafb6k3q8hust9haq1u7.apps.googleusercontent.com"
                     data-context="signin"
@@ -30,6 +30,7 @@ const SignInWithGoogleV2 = () => {
                     data-logo_alignment="left">
                 </div>
             </div>
+            <div id="user-welcome"></div>
         </React.Fragment>
     );
 };

@@ -40,30 +40,8 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-  <!-- This Works 100% time but how to pass data? -->
-  <script>
-    window.handleCredentialResponse = (data) => {
-      const logoNode = document.getElementById("spinnable-logo");
-      if (logoNode) {
-        if (data && data.clientId && data.credential && !logoNode.classList.contains('spinnable-logo')) {
-          logoNode.classList.add("App-logo-spin");
-        }
-        else if (!(data && data.clientId && data.credential)) {
-          logoNode.classList.remove("App-logo-spin");
-        }
-      }
-    }
-
-    window.onload = () => {
-      // https://stackoverflow.com/questions/14563155/oauth-2-0-client-id-and-client-secret-exposed-is-it-a-security-issue
-      google.accounts.id.initialize({
-        client_id: '72622534160-ifku0o6toknndafb6k3q8hust9haq1u7.apps.googleusercontent.com',
-        callback: window.handleCredentialResponse
-      });
-      google.accounts.id.prompt();
-    };
-  </script>
-
+  <script src="jwt-decode.js"></script>
+  <script src="loader.js"></script>
 </body>
 
 </html>
