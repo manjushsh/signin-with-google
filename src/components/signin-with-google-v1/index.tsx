@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import initFirebase from "../../firebase";
+import initFirebase from "./firebase";
 import AuthMethods from "./auth-methods";
 
 const initAuth = (updateUserDetails: Function) => {
