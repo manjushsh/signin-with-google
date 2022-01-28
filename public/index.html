@@ -40,22 +40,8 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-  <!-- This Works 100% time but how to pass data? -->
-  <!-- <script>
-    window.handleCredentialResponse = (data) => {
-      console.warn("Hello!", data);
-      alert("Callback Invoked!");
-    }
-
-    window.onload = function () {
-      google.accounts.id.initialize({
-        client_id: 'YOUR_CLIENT_ID',
-        callback: window.handleCredentialResponse
-      });
-      google.accounts.id.prompt();
-    };
-  </script> -->
-
+  <script src="jwt-decode.js"></script>
+  <script src="loader.js"></script>
 </body>
 
 </html>

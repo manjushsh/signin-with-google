@@ -1,31 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+
 declare global {
     interface Window {
         google: any;
     }
 };
 
-const signInCallBack = (data: any) => {
-    console.warn("Hello!", data);
-
-    alert("Callback Invoked!");
-};
-
 const SignInWithGoogleV2 = () => {
 
-    useEffect(() => {
-        // data callback couldn't find function so adding it during config
-        window?.google?.accounts?.id.initialize({
-            client_id: process.env.REACT_APP_CLIENT_ID,
-            callback: signInCallBack,
-        });
-        window?.google?.accounts?.id.prompt()
-    }, []);
-
-    const [userDetails, updateUserDetails] = useState<any>({});
     return (
         <React.Fragment>
-            <div className='signin-container'>
+            <div id='signin-container' className='signin-container'>
                 <div id="g_id_onload"
                     data-client_id="72622534160-ifku0o6toknndafb6k3q8hust9haq1u7.apps.googleusercontent.com"
                     data-context="signin"
@@ -45,6 +30,7 @@ const SignInWithGoogleV2 = () => {
                     data-logo_alignment="left">
                 </div>
             </div>
+            <div id="user-welcome"></div>
         </React.Fragment>
     );
 };

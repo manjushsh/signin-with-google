@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SignInWithGoogle from '../signin-with-google-v1';
+import SignInWithGoogle from '../signin-with-google-v2';
 
 function App() {
   return (
