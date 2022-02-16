@@ -12,7 +12,7 @@ const SignInWithGoogleV2 = () => {
         <React.Fragment>
             <div id='signin-container' className='signin-container'>
                 <div id="g_id_onload"
-                    data-client_id="72622534160-ifku0o6toknndafb6k3q8hust9haq1u7.apps.googleusercontent.com"
+                    data-client_id={process.env.REACT_APP_CLIENT_ID}
                     data-context="signin"
                     data-ux_mode="popup"
                     data-callback="signInCallBack"
